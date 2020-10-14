@@ -2,15 +2,34 @@
 <html>
 <head>
 	<title>Decimal & Hexadecimal</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-	<h1>Dec to Hex</h1>
-	<input type="text" id="nhex" onchange="convertToHex();">
-	<input type="text" id="rhex" readonly="false">
-	<hr>
-	<h1>Hex to Dec</h1>
-	<input type="text" id="ndecimal" onchange="convertToDec();">
-	<input type="text" id="rdecimal" readonly="false">
+
+	<div class="container-fluid">	
+		<div class="row justify-content-center">
+			<div class="col-md-4">
+				<div class="card card-frame">
+					<div class=" card-body">
+						<h1>Decimal & Hexadecimal</h1>
+						<hr class="my-4">
+						<h1>Dec to Hex</h1>
+						<input type="text" id="nhex" onchange="convertToHex();">
+						<input type="text" id="rhex" readonly="false">
+						<hr>
+						<h1>Hex to Dec</h1>
+						<input type="text" id="ndecimal" onchange="convertToDec();">
+						<input type="text" id="rdecimal" readonly="false">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<script>
 		function convertToHex(){
@@ -23,7 +42,6 @@
 			console.log(result);
 			document.getElementById("rhex").value = result;
 			console.log('=============');
-
 		}
 
 		function convertToDec(){
@@ -36,7 +54,6 @@
 			console.log(result);
 			document.getElementById("rdecimal").value = result;
 			console.log('=============');
-
 		}
 	</script>
 </body>
