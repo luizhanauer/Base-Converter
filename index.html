@@ -2,15 +2,62 @@
 <html>
 <head>
 	<title>Decimal & Hexadecimal</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-	<h1>Dec to Hex</h1>
-	<input type="text" id="nhex" onchange="convertToHex();">
-	<input type="text" id="rhex" readonly="false">
-	<hr>
-	<h1>Hex to Dec</h1>
-	<input type="text" id="ndecimal" onchange="convertToDec();">
-	<input type="text" id="rdecimal" readonly="false">
+
+	<div class="container-fluid mt-4">
+		<div class="row justify-content-center">
+			<div class="col-md-4">
+				<div class="card card-frame">
+					<div class="card-header badge-dark">
+						Decimal & Hexadecimal
+					</div>
+					<div class=" card-body">
+						<hr class="my-4">
+						<h3 align="center">Dec to Hex</h3>
+						<hr class="my-4">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="nhex" class="form-control-label">Número Decimal</label>
+									<input type="text" class="form-control" id="nhex" placeholder="Ex: 123" onchange="convertToHex();">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="rhex" class="form-control-label">Número Hexadecimal</label>
+									<input type="text" class="form-control" id="rhex" placeholder="7b" readonly="false">
+								</div>
+							</div>
+						</div>
+						<hr class="my-4">
+						<h3 align="center">Hex to Dec</h3>
+						<hr class="my-4">
+						<div class="row">	
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="ndecimal" class="form-control-label">Número Hexadecimal</label>
+									<input type="text" class="form-control" id="ndecimal" placeholder="Ex: 7b" onchange="convertToDec();">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="rdecimal" class="form-control-label">Número Decimal</label>
+									<input type="text" class="form-control" id="rdecimal" placeholder="123" readonly="false">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<script>
 		function convertToHex(){
@@ -23,7 +70,6 @@
 			console.log(result);
 			document.getElementById("rhex").value = result;
 			console.log('=============');
-
 		}
 
 		function convertToDec(){
@@ -36,7 +82,6 @@
 			console.log(result);
 			document.getElementById("rdecimal").value = result;
 			console.log('=============');
-
 		}
 	</script>
 </body>
