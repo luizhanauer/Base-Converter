@@ -19,12 +19,14 @@
 						Decimal & Hexadecimal
 					</div>
 					<div class=" card-body">
-						<!-- <h5 align="center">Dec to Hex</h5> -->
+						<hr class="my-4">
+						<h3 align="center">Dec to Hex</h3>
+						<hr class="my-4">
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="nhex" class="form-control-label">Número Decimal</label>
-									<input type="text" class="form-control" id="nhex" placeholder="Ex: 123" onchange="convertToHex();">
+									<input type="text" class="form-control" id="nhex" placeholder="Ex: 123" onkeypress="convertToHex();" onchange="convertToHex();">
 								</div>
 							</div>
 							<div class="col-md-6">
@@ -34,13 +36,14 @@
 								</div>
 							</div>
 						</div>
-						<hr>
-						<!-- <h5 align="center">Hex to Dec</h5> -->
+						<hr class="my-4">
+						<h3 align="center">Hex to Dec</h3>
+						<hr class="my-4">
 						<div class="row">	
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="ndecimal" class="form-control-label">Número Hexadecimal</label>
-									<input type="text" class="form-control" id="ndecimal" placeholder="Ex: 7b" onchange="convertToDec();">
+									<input type="text" class="form-control" id="ndecimal" placeholder="Ex: 7b" onkeypress="convertToDec();" onchange="convertToDec();">
 								</div>
 							</div>
 							<div class="col-md-6">
