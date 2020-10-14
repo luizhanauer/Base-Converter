@@ -7,6 +7,8 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
 </head>
 <body>
@@ -22,24 +24,57 @@
 						<hr class="my-4">
 						<h3 align="center">Dec to Hex</h3>
 						<hr class="my-4">
-						<div class="row">
-							<div class="col-md-6">
+						<div class="row d-flex justify-content-center">
+							<div class="col-md-12">
 								<div class="form-group">
 									<label for="nhex" class="form-control-label">Número Decimal</label>
 									<input type="text" class="form-control" id="nhex" placeholder="Ex: 123" onchange="convertToHex();">
 								</div>
 							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="rhex" class="form-control-label">Número Hexadecimal</label>
+							<div class="col-12 d-flex justify-content-center">
+								<i class="fas fa-arrow-down fa-6x"></i>
+							</div>
+
+							<div class="col-md-12">
+								<label for="rhex" class="form-control-label">Número Hexadecimal</label>
+								<div class="form-group input-group">
 									<input type="text" class="form-control" id="rhex" placeholder="7b" readonly="false">
+									<div class="input-group-append">
+										<button class="btn btn-dark" data-clipboard-target="#rhex" data-toggle="tooltip" title="Copy">
+											<i class="fas fa-copy"></i>
+										</button>
+									</div>
 								</div>
 							</div>
 						</div>
 						<hr class="my-4">
 						<h3 align="center">Hex to Dec</h3>
 						<hr class="my-4">
-						<div class="row">	
+						<div class="row d-flex justify-content-center">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label for="ndecimal" class="form-control-label">Número Decimal</label>
+									<input type="text" class="form-control" id="ndecimal" placeholder="Ex: 7b" onchange="convertToDec();">
+								</div>
+							</div>
+							<div class="col-12 d-flex justify-content-center">
+								<i class="fas fa-arrow-down fa-6x"></i>
+							</div>
+
+							<div class="col-md-12">
+								<label for="rdecimal" class="form-control-label">Número Hexadecimal</label>
+								<div class="form-group input-group">
+									<input type="text" class="form-control" id="rdecimal" placeholder="123" readonly="false">
+									<div class="input-group-append">
+										<button class="btn btn-dark" data-clipboard-target="#rdecimal" data-toggle="tooltip" title="Copy">
+											<i class="fas fa-copy"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+<!-- 						<div class="row">	
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="ndecimal" class="form-control-label">Número Hexadecimal</label>
@@ -52,7 +87,7 @@
 									<input type="text" class="form-control" id="rdecimal" placeholder="123" readonly="false">
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -63,26 +98,36 @@
 		function convertToHex(){
 			let decimal = 0;
 			decimal = document.getElementById("nhex").value;
-			console.log('=============');
-			console.log(decimal);
+			// console.log('=============');
+			// console.log(decimal);
 			let result = 0;
 			result = Number(decimal).toString(16);
 			console.log(result);
 			document.getElementById("rhex").value = result;
-			console.log('=============');
+			// console.log('=============');
 		}
 
 		function convertToDec(){
 			let hex = 0;
 			hex = document.getElementById("ndecimal").value;
-			console.log('=============');
-			console.log(hex);
+			// console.log('=============');
+			// console.log(hex);
 			let result = 0;
 			result = parseInt(hex, 16);
-			console.log(result);
+			// console.log(result);
 			document.getElementById("rdecimal").value = result;
-			console.log('=============');
+			// console.log('=============');
 		}
+
+		var clipboard = new ClipboardJS('.btn');
+
+		clipboard.on('success', function(e) {
+			console.log(e);
+		});
+
+		clipboard.on('error', function(e) {
+			console.log(e);
+		});
 	</script>
 </body>
 </html>
