@@ -1,1 +1,43 @@
-<h1>Hello!</h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Decimal & Hexadecimal</title>
+</head>
+<body>
+	<h1>Dec to Hex</h1>
+	<input type="text" id="nhex" onchange="convertToHex();">
+	<input type="text" id="rhex" readonly="false">
+	<hr>
+	<h1>Hex to Dec</h1>
+	<input type="text" id="ndecimal" onchange="convertToDec();">
+	<input type="text" id="rdecimal" readonly="false">
+
+	<script>
+		function convertToHex(){
+			let decimal = 0;
+			decimal = document.getElementById("nhex").value;
+			console.log('=============');
+			console.log(decimal);
+			let result = 0;
+			result = Number(decimal).toString(16);
+			console.log(result);
+			document.getElementById("rhex").value = result;
+			console.log('=============');
+
+		}
+
+		function convertToDec(){
+			let hex = 0;
+			hex = document.getElementById("ndecimal").value;
+			console.log('=============');
+			console.log(hex);
+			let result = 0;
+			result = parseInt(hex, 16);
+			console.log(result);
+			document.getElementById("rdecimal").value = result;
+			console.log('=============');
+
+		}
+	</script>
+</body>
+</html>
