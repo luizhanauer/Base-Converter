@@ -16,16 +16,40 @@
 			<div class="col-md-4">
 				<div class="card card-frame">
 					<div class="card-header badge-dark">
-						Card title Decimal & Hexadecimal
+						Decimal & Hexadecimal
 					</div>
 					<div class=" card-body">
-						<h5>Dec to Hex</h5>
-						<input type="text" class="form-control" id="nhex" onchange="convertToHex();">
-						<input type="text" class="form-control" id="rhex" readonly="false">
+						<!-- <h5 align="center">Dec to Hex</h5> -->
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="nhex" class="form-control-label">Número Decimal</label>
+									<input type="text" class="form-control" id="nhex" placeholder="Ex: 123" onchange="convertToHex();">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="rhex" class="form-control-label">Número Hexadecimal</label>
+									<input type="text" class="form-control" id="rhex" placeholder="7b" readonly="false">
+								</div>
+							</div>
+						</div>
 						<hr>
-						<h5>Hex to Dec</h5>
-						<input type="text" class="form-control" id="ndecimal" onchange="convertToDec();">
-						<input type="text" class="form-control" id="rdecimal" readonly="false">
+						<!-- <h5 align="center">Hex to Dec</h5> -->
+						<div class="row">	
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="ndecimal" class="form-control-label">Número Hexadecimal</label>
+									<input type="text" class="form-control" id="ndecimal" placeholder="Ex: 7b" onchange="convertToDec();">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="rdecimal" class="form-control-label">Número Decimal</label>
+									<input type="text" class="form-control" id="rdecimal" placeholder="123" readonly="false">
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
