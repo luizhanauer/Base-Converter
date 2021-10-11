@@ -6,7 +6,7 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
 	<link rel="stylesheet" type="text/css"
-		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
 
@@ -14,29 +14,28 @@
 
 <body class="bg-gray-300">
 	<div class="grid grid-cols-1 lg:grid-cols-2">
-		<div class="bg-blue-400 lg:min-h-screen lg:flex lg:items-center p-8 sm:p-12">
+		<div class="bg-gray-900 lg:min-h-screen lg:flex lg:items-center p-8 sm:p-12">
 			<div class="flex-grow">
 				<h1 class="text-white text-center text-2xl sm:text-5xl mb-2"> Conversão entre decimal & hexadecimal</h1>
 			</div>
 		</div>
 		<div class="lg:min-h-screen lg:flex lg:items-center p-12 lg:p-24 xl:p-48">
 			<div class="flex-grow bg-white shadow-xl rounded-md border border-gray-300 p-8">
-				<div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
-					<div class="md:col-span-5">
-						<label for="decimal">Número Decimal</label>
-						<input type="text" name="decimal" id="nhex"
-							class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value=""
-							onkeyup="convertToHex();" />
+				<label class="font-bold text-gray-500" for="decimal">Número Decimal</label>
+				<div class="flex items-center grid">
+					<div class="relative">
+						<input type="text" class="h-14 pl-10 pr-20 rounded-lg z-0 focus:shadow focus:outline-none border bg-gray-50 w-full" placeholder="..." id="nhex" name="decimal" onkeyup="convertToHex();" >
+						<div class="absolute top-2 right-2"> <button class="h-10 w-20 text-white rounded-lg bg-green-500 hover:bg-green-600 btn" data-clipboard-target="#nhex" data-toggle="tooltip" title="Copy"><i class="far fa-copy"></i> Copiar</button> </div>
 					</div>
 				</div>
-				<div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
-					<div class="md:col-span-5">
-						<label for="hexadecimal">Número Hexadecimal</label>
-						<input type="text" name="hexadecimal" id="rhex"
-							class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value=""
-							onkeyup="convertToDec();" />
+				<label class="font-bold text-gray-500" for="hexadecimal">Número Hexadecimal</label>
+				<div class="flex items-center grid">
+					<div class="relative">
+						<input type="text" class="h-14 pl-10 pr-20 rounded-lg z-0 focus:shadow focus:outline-none border bg-gray-50 w-full" placeholder="..." id="rhex" name="hexadecimal" onkeyup="convertToDec();">
+						<div class="absolute top-2 right-2"> <button class="h-10 w-20 text-white rounded-lg bg-green-500 hover:bg-green-600 btn" data-clipboard-target="#rhex" data-toggle="tooltip" title="Copy"><i class="far fa-copy"></i> Copiar</button> </div>
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</div>
@@ -71,6 +70,7 @@
 
 		clipboard.on('success', function (e) {
 			console.log(e);
+			alert('Copiado para área de transferência!');
 		});
 
 		clipboard.on('error', function (e) {
