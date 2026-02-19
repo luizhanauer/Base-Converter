@@ -1,107 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Conversor</title>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/style.css" rel="stylesheet" />
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-</head>
-
-<body class="bg-gray-300">
-	<div class="grid grid-cols-1 lg:grid-cols-2">
-		<div class="bg-gray-900 lg:min-h-screen lg:flex lg:items-center p-8 sm:p-12">
-			<div class="flex-grow">
-				<h1 class="text-white text-center text-2xl sm:text-5xl mb-2"> Conversões:</h1>
-				<li class="text-white text- text-2xl sm:text-3xl mb-2">Decimal</li>
-				<li class="text-white text- text-2xl sm:text-3xl mb-2">Hexadecimal</li>
-				<li class="text-white text- text-2xl sm:text-3xl mb-2">Binário</li>
-			</div>
-		</div>
-		<div class="lg:min-h-screen lg:flex lg:items-center p-12 lg:p-24 xl:p-48">
-			<div class="flex-grow bg-white shadow-xl rounded-md border border-gray-300 p-8">
-				<label class="font-bold text-gray-500" for="decimal">Número Decimal</label>
-				<div class="flex items-center grid">
-					<div class="relative">
-						<input type="text" class="h-14 pl-10 pr-20 rounded-lg z-0 focus:shadow focus:outline-none border bg-gray-50 w-full" placeholder="..." id="ndec" name="decimal" onkeyup="inDec();" >
-						<div class="absolute top-2 right-2"> <button class="h-10 w-20 text-white rounded-lg bg-green-500 hover:bg-green-600 btn" data-clipboard-target="#ndec" data-toggle="tooltip" title="Copy"><i class="far fa-copy"></i> Copiar</button> </div>
-					</div>
-				</div>
-				<label class="font-bold text-gray-500" for="hexadecimal">Número Hexadecimal</label>
-				<div class="flex items-center grid">
-					<div class="relative">
-						<input type="text" class="h-14 pl-10 pr-20 rounded-lg z-0 focus:shadow focus:outline-none border bg-gray-50 w-full" placeholder="..." id="nhex" name="hexadecimal" onkeyup="inHex();">
-						<div class="absolute top-2 right-2"> <button class="h-10 w-20 text-white rounded-lg bg-green-500 hover:bg-green-600 btn" data-clipboard-target="#nhex" data-toggle="tooltip" title="Copy"><i class="far fa-copy"></i> Copiar</button> </div>
-					</div>
-				</div>
-				<label class="font-bold text-gray-500" for="binario">Número Binário</label>
-				<div class="flex items-center grid">
-					<div class="relative">
-						<input type="text" class="h-14 pl-10 pr-20 rounded-lg z-0 focus:shadow focus:outline-none border bg-gray-50 w-full" placeholder="..." id="nbin" name="binario" onkeyup="inBin();">
-						<div class="absolute top-2 right-2"> <button class="h-10 w-20 text-white rounded-lg bg-green-500 hover:bg-green-600 btn" data-clipboard-target="#nbin" data-toggle="tooltip" title="Copy"><i class="far fa-copy"></i> Copiar</button> </div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-
-	<script>
-
-		function inDec() {
-			decimal = document.getElementById("ndec").value;
-			document.getElementById("nhex").value = decToHex(decimal);
-			document.getElementById("nbin").value = decToBin(decimal);
-		}
-
-		function inHex() {
-			hexadecimal = document.getElementById("nhex").value;
-			document.getElementById("ndec").value = hexToDec(hexadecimal);
-			document.getElementById("nbin").value = hexToBin(hexadecimal);
-		}
-
-		function inBin() {
-			binario = document.getElementById("nbin").value;
-			document.getElementById("ndec").value = binToDec(binario);
-			document.getElementById("nhex").value = binToHex(binario);
-		}
-
-		function decToHex($value) {
-			return Number($value).toString(16).toUpperCase();
-		}
-
-		function decToBin($value) {
-			return parseInt($value).toString(2);
-		}
-
-		function hexToDec($value) {
-			return parseInt($value, 16);
-		}
-
-		function hexToBin($value) {
-			$dec = hexToDec($value);
-			return decToBin($dec);
-		}
-
-		function binToDec($value) {
-			return parseInt($value, 2);
-		}
-
-		function binToHex($value) {
-			return parseInt($value, 2).toString(16).toUpperCase();
-		}
-
-		let clipboard = new ClipboardJS('.btn');
-
-		clipboard.on('success', function (e) {
-			console.log(e);
-			alert('Copiado para área de transferência!');
-		});
-
-		clipboard.on('error', function (e) {
-			console.log(e);
-		});
-	</script>
-</body>
-
+    <title>devbase</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>
